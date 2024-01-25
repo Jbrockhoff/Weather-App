@@ -1,3 +1,8 @@
-#city-search {
-    
+header {
+    color: white;
+    background-color: rgb(72, 90, 228);
+}
+
+.btn {
+    font-size: 20px;
 }
