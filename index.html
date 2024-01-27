@@ -6,10 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
-       <!--add font awesome link  -->
-    <script src="https://kit.fontawesome.com/cf366b0ddb.js" crossorigin="anonymous"></script>
-       <!-- add geolocation link -->
-    <link rel="http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={API key}" />
+    <!--Font awesome link  -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"crossorigin="anonymous"/>
+    <!--my CSS-->
     <link rel="stylesheet" href="./assets/style.css" />
     <title>Weather Forecast</title>
   </head>
@@ -20,6 +19,7 @@
     </header>
       
    <!--Created sidebar with search/submit/previous cities-->
+   <main class="main">
    <div class="container row col-sm-4 bg-light">
         <h2 class="pt-1"><strong>Search for a City:</strong></h2>
             <div class="input-group mb-2">
@@ -30,22 +30,49 @@
             </div>
     <!--section for search city history-->
         <div>
-            <button class="btn btn-primary" type="button" id="clear-history">Clear history</button>
-               <ul class="list-group"></ul>
-        </div>
+            <button class="btn btn-primary" type="button" id="clear-history"> Clear history </button>
+        </div>         <ul class="list-group"></ul>
+    </div>
         
-        <i class="fa-solid fa-cloud"></i>
-        <i class="fa-solid fa-sun"></i>
-        <i class="fa-solid fa-wind"></i>
-        <i class="fa-solid fa-cloud-showers-heavy"></i>
-        <i class="fa-solid fa-cloud-sun"></i>
-        <i class="fa-solid fa-temperature-low"></i>
-        <i class="fa-solid fa-temperature-high"></i>
-        <i class="fa-solid fa-feather-pointed"></i>
 
+    <!-- current city/weather display -->
+        <section id=" city-display">
+        <div class="card">
+            <div class="card-body">
+              <h2 class="card-title d-flex align-items-center lead font-weight-bold" style="height: 100px">
+                <span id="cityName">Name of City</span>
+                <span class="px-3" id="currentdate"> MM/DD/YY</span>
+                <img class="weather-icon" id="weatherIconToday" src="">
+                </img>
+              </h2>
+              <p class="card-text">
+                Temperature:
+                <span id="tempToday">--</span>
+              </p>
+              <p class="card-text">
+                Humidity:
+                <span id="humidityToday">--</span>
+              </p>
+              <p class="card-text">
+                Wind Speed:
+                <span id="windSpeedToday">--</span>
+              </p>
+            
+            </div>
+          </div>
+        </section>   
+        <i class="fa fa-solid fa-cloud"></i>
+        <i class="fa fa-solid fa-sun"></i>
+        <i class="fa fa-solid fa-wind"></i>
+        <i class="fa fa-solid fa-cloud-showers-heavy"></i>
+        <i class="fa fa-solid fa-cloud-sun"></i>
+        <i class="fa fa-solid fa-temperature-low"></i>
+        <i class="fa fa-solid fa-temperature-high"></i>
+        <i class="fa fa-solid fa-feather-pointed"></i>
 
-
-
+    </main>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js" integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
 <script src="./assets/script.js"></script>
   </body>
 </html> 
