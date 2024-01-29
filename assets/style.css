@@ -3,6 +3,11 @@ header {
     background-color: rgb(72, 90, 228);
 }
 
+body {
+    background-color:lightblue;
+}
+
+
 .btn {
     font-size: 20px;
 }

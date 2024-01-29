@@ -18,61 +18,63 @@
       <h1 class="display-3"><strong>Weather Dashboard</strong></h1>  
     </header>
       
-   <!--Created sidebar with search/submit/previous cities-->
+   <!--Created sidebar with search/submit/previous cities and to clear -->
    <main class="main">
-   <div class="container row col-sm-4 bg-light">
+    <div id="container" class="row">
+   <div class="container row col-4 bg-light ">
         <h2 class="pt-1"><strong>Search for a City:</strong></h2>
-            <div class="input-group mb-2">
-                <input type="text" class="form-control"id="search-city" aria-label="City Search" aria-describedby="search-button">
-                <div class="input-group-append">
-                    <button class="btn btn-primary" type="button" id="search-button"> Search <i class="fa fa-search"></i></button>
-                </div>
+            <div class="mb-2">
+              <form class="input-group">  
+              <input id="search-city" type="text" class="form-control" aria-label="City Search" aria-describedby="search-button">
+                <div class="input-group-append"></div>
+                <button id="start-button" class="btn btn-primary" type="button" id="search-button">Search<i class="fa fa-search"></i></button>
+              </form>
             </div>
     <!--section for search city history-->
         <div>
-            <button class="btn btn-primary" type="button" id="clear-history"> Clear history </button>
-        </div>         <ul class="list-group"></ul>
+            <button id="clear-history" class="btn btn-primary" type="button">Clear Search History</button>
+        </div>
+                 <ul class="list-group"></ul>
     </div>
         
-
     <!-- current city/weather display -->
-        <section id=" city-display">
+      <div id="city-display" class="col-8">
         <div class="card">
             <div class="card-body">
               <h2 class="card-title d-flex align-items-center lead font-weight-bold" style="height: 100px">
-                <span id="cityName">Name of City</span>
-                <span class="px-3" id="currentdate"> MM/DD/YY</span>
-                <img class="weather-icon" id="weatherIconToday" src="">
+                <span id="city-name">Name of City</span>
+                <span class="px-3" id="current-date"> MM/DD/YY</span>
+                <img class="weather-icon" id="weather-icon-current" src="">
                 </img>
               </h2>
               <p class="card-text">
                 Temperature:
-                <span id="tempToday">--</span>
+                <span id="temp-now">--</span>
               </p>
               <p class="card-text">
                 Humidity:
-                <span id="humidityToday">--</span>
+                <span id="humidity-now">--</span>
               </p>
               <p class="card-text">
                 Wind Speed:
-                <span id="windSpeedToday">--</span>
+                <span id="wind-speed-now">--</span>
               </p>
             
             </div>
           </div>
-        </section>   
-        <i class="fa fa-solid fa-cloud"></i>
-        <i class="fa fa-solid fa-sun"></i>
-        <i class="fa fa-solid fa-wind"></i>
-        <i class="fa fa-solid fa-cloud-showers-heavy"></i>
-        <i class="fa fa-solid fa-cloud-sun"></i>
-        <i class="fa fa-solid fa-temperature-low"></i>
-        <i class="fa fa-solid fa-temperature-high"></i>
-        <i class="fa fa-solid fa-feather-pointed"></i>
+    </div>  
+    <!--future forecast-->
+        <section id="five-day" class="row"> 
+          <div class="row">
+            <h2>Five-Day Forecast</h2>
+          </div>
+          <div id="forecast-container" class="row">
+          </div>
+        </section>
 
     </main>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js" integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
 <script src="./assets/script.js"></script>
-  </body>
+</body>
 </html> 
