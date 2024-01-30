@@ -7,8 +7,8 @@ function search() {
     fetch (api).then(function (res) {
         return res.json()
     }).then (function (data){
-        document.getElementById("city-name").innerText = data.city.name
         var day = data.list[0]
+        document.getElementById("city-name").innerText = data.city.name
         document.getElementById("current-date").innerText = dayjs.unix(day.dt).format("MM/D/YY")
         document.getElementById("temp-now").innerText = day.main.temp
         document.getElementById("humidity-now").innerText = day.main.humidity
@@ -32,24 +32,12 @@ function search() {
             document.getElementById("forecast-container").append(newDay)
         }
     })
-    saveStorage ()
 }
 
-function saveStorage () {
-    var previousCities = $(this).siblings("#city-name").val();
-    localStorage.setItem(previousCities); 
-
-}
-
-//Function to save to local storage
-// $("#startButton").on("click", function () {   
-//     var previousCities = $(this).siblings("#city-name").val();  
-    // var searchHistory= $(this).parent().attr("id"); 
-         //set items in local storage.
-         
-//     localStorage.setItem(previousCities);      
-//  });
-
- $('#start-button .city-name').val(localStorage.getItem('city-name'));
-
- document.getElementById("start-button").addEventListener("click", search)
+var searchHistory = (localStorage.searchHistory) ? JSON.parse(localStorage.searchHistory) : [];
+document.querySelector("#start-button").addEventListener("click", () => {
+  searchHistory.push(document.querySelector(".form-control").value);
+  localStorage.searchHistory = JSON.stringify(searchHistory);
+});
+localStorage.setItem("City", searchHistory);
+document.getElementById("start-button").addEventListener("click", search)
