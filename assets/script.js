@@ -45,12 +45,3 @@ document.querySelector("#start-button").addEventListener("click", () => {
 localStorage.setItem("City", searchHistory);
 document.getElementById("start-button").addEventListener("click", search)
 
-//displays local storage in list on side
-// document.getElementById("search-city").addEventListener("focus", () => {
-//     var data = document.querySelector("datalist#searchdata");
-//     data.innerHTML = "";
-//     searchHistory.forEach((search) => {
-//       data.innerHTML = "<option>" + data.innerHTML;
-//       data.querySelector("option").innerText = search;
-//     });
-//   });
